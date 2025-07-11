@@ -14,14 +14,11 @@ section {
 h2 {
   transition: font-size 300ms ease-out;
   font-size: 20vw;
-  color: transparent;
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: transparent;
-  background: linear-gradient(to right, #4f46e5, #1e40af);
+  color: #fff;
+  background: -webkit-linear-gradient(45deg, #09009f, #00ff95 80%);
   -webkit-background-clip: text;
-  filter: drop-shadow(0 0 4px #4f46e5) drop-shadow(0 0 8px #1e40af);
-  -webkit-box-reflect: below 10px
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.4));
+  -webkit-text-fill-color: transparent;
+  -webkit-box-reflect: below 10px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
 }
 
 @media (min-width: 1200px) {
@@ -58,7 +55,7 @@ h2 {
   left: 0;
   width: 2.5rem;
   height: 2.5rem;
-  z-index: 50;
+  z-index: 2;
   pointer-events: none;
 }
 
@@ -69,6 +66,7 @@ h2 {
 }
 
 .cursor div div {
+  border: 1px solid #fff;
   border-radius: 50%;
   animation: pulse 2.5s linear infinite;
   box-shadow: 0 0 50px 5px #d7abff6e;

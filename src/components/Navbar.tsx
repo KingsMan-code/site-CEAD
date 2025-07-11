@@ -2,10 +2,10 @@ import Link from 'next/link';
 
 export default function Navbar() {
   return (
-    <header className="fixed bottom-0 left-0 right-0 z-10 p-4">
+    <header className="sticky top-0 left-0 z-10 p-4">
 
       <nav className="mx-auto flex max-w-5xl items-center justify-center rounded-full bg-[rgba(76,76,76,0.36)] px-6 py-3 backdrop-blur text-white">
-        <ul className="flex w-full flex-wrap items-center justify-evenly font-semibold">
+        <ul className="flex flex-wrap justify-center gap-6 font-semibold">
 
           <li>
             <Link href="/home" className="hover:underline">
