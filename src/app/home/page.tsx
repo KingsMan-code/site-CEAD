@@ -38,16 +38,16 @@ export default function HomePage() {
 
     <main>
       <section id="portfolio">
-        <h2 data-animate="true">Portfolio</h2>
+        <h2 data-animate="true">Criatividade</h2>
       </section>
       <section id="press">
-        <h2 data-animate="true">Press</h2>
+        <h2 data-animate="true">Inovacao</h2>
       </section>
       <section id="shop">
-        <h2 data-animate="true">Shop</h2>
+        <h2 data-animate="true">Marketing</h2>
       </section>
       <section id="about">
-        <h2 data-animate="true">About</h2>
+        <h2 data-animate="true">Media</h2>
       </section>
       <div id="cursor" className="cursor">
         <div className="ring">
