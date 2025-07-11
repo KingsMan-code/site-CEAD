@@ -1,13 +1,61 @@
-import Link from "next/link";
-import { Button } from "@radix-ui/themes";
+'use client';
+import { useEffect } from "react";
+import "./landing.css";
 
 export default function HomePage() {
+  useEffect(() => {
+    const cursor = document.getElementById("cursor");
+    const rings = cursor?.querySelectorAll<HTMLElement>(".ring");
+    function handleMove(e: MouseEvent) {
+      rings?.forEach((ring) => {
+        ring.style.transform = `translateX(calc(${e.clientX}px - 1.25rem)) translateY(calc(${e.clientY}px - 1.25rem))`;
+      });
+    }
+    window.addEventListener("mousemove", handleMove);
+
+    const elements = document.querySelectorAll<HTMLElement>("[data-animate='true']");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-slide-down");
+          } else {
+            entry.target.classList.remove("animate-slide-down");
+          }
+        });
+      },
+      { rootMargin: "300px 0px 300px 0px" }
+    );
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      window.removeEventListener("mousemove", handleMove);
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center gap-6">
-      <h1 className="text-4xl font-bold">Bem-vindo à Home!</h1>
-      <Link href="/sobre">
-        <Button>Sobre nós</Button>
-      </Link>
+    <main>
+      <section id="portfolio">
+        <h2 data-animate="true">Portfolio</h2>
+      </section>
+      <section id="press">
+        <h2 data-animate="true">Press</h2>
+      </section>
+      <section id="shop">
+        <h2 data-animate="true">Shop</h2>
+      </section>
+      <section id="about">
+        <h2 data-animate="true">About</h2>
+      </section>
+      <div id="cursor" className="cursor">
+        <div className="ring">
+          <div></div>
+        </div>
+        <div className="ring">
+          <div></div>
+        </div>
+      </div>
     </main>
   );
 }
