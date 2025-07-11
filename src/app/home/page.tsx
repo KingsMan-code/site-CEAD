@@ -35,6 +35,7 @@ export default function HomePage() {
   }, []);
 
   return (
+
     <main>
       <section id="portfolio">
         <h2 data-animate="true">Portfolio</h2>
@@ -55,6 +56,7 @@ export default function HomePage() {
         <div className="ring">
           <div></div>
         </div>
+
       </div>
     </main>
   );
