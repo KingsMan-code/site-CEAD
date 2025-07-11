@@ -4,14 +4,6 @@ import "./landing.css";
 
 export default function HomePage() {
   useEffect(() => {
-    const cursor = document.getElementById("cursor");
-    const rings = cursor?.querySelectorAll<HTMLElement>(".ring");
-    function handleMove(e: MouseEvent) {
-      rings?.forEach((ring) => {
-        ring.style.transform = `translateX(calc(${e.clientX}px - 1.25rem)) translateY(calc(${e.clientY}px - 1.25rem))`;
-      });
-    }
-    window.addEventListener("mousemove", handleMove);
 
     const elements = document.querySelectorAll<HTMLElement>("[data-animate='true']");
     const observer = new IntersectionObserver(
@@ -29,7 +21,6 @@ export default function HomePage() {
     elements.forEach((el) => observer.observe(el));
 
     return () => {
-      window.removeEventListener("mousemove", handleMove);
       elements.forEach((el) => observer.unobserve(el));
     };
   }, []);
@@ -49,15 +40,6 @@ export default function HomePage() {
       <section id="about">
         <h2 data-animate="true">Media</h2>
       </section>
-      <div id="cursor" className="cursor">
-        <div className="ring">
-          <div></div>
-        </div>
-        <div className="ring">
-          <div></div>
-        </div>
-
-      </div>
     </main>
   );
 }
