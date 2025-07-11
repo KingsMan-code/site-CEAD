@@ -32,13 +32,13 @@ export default function HomePage() {
         <h2 data-animate="true">Criatividade</h2>
       </section>
       <section id="press">
-        <h2 data-animate="true">Inovacao</h2>
+        <h2 data-animate="true">Inovação</h2>
       </section>
       <section id="shop">
         <h2 data-animate="true">Marketing</h2>
       </section>
       <section id="about">
-        <h2 data-animate="true">Media</h2>
+        <h2 data-animate="true">Mídia</h2>
       </section>
     </main>
   );
